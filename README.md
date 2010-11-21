@@ -32,5 +32,5 @@ same process.
 
 The options on `actors.createConnection` are the same as for [node-amqp](https://github.com/ry/node-amqp)
 
-For more info check out the `docs/` folder.
+For more info check out the [docs](http://flashingpumpkin.github.com/node-actors/docs/actors.html).
 
