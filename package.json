@@ -1,0 +1,31 @@
+{
+    "name": "actors",
+    "description": "Simple message passing for node.js",
+    "tags": [
+        "node",
+        "coffeescript",
+        "actors"
+    ],
+    "version": "0.0.1",
+    "author": "Alen Mujezinovic <alen@caffeinehit.com>",
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://opensource.org/licenses/mit-license.php"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:flashingpumpkin/node-actors.git"
+    },
+    "bugs": "https://github.com/flashingpumpkin/node-actors/issues",
+    "engines": [
+        "node >= 0.2.0"
+    ],
+    "directories": {
+        "lib" : "./lib"
+    },
+    "main": "./lib/actors",
+    "dependencies": {
+        "amqp": ">=0.0.2",
+        "uuid": ">=0.0.2"
+    }
+}
