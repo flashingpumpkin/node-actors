@@ -1,7 +1,7 @@
 # Actors
 
 Lots has been said about actors and message passing. I've been wondering
-how to do that easily and both between processes and objects in the 
+how to do that easily both between processes and objects in the 
 same process. 
 
 ## Synopsis
@@ -14,7 +14,7 @@ same process.
         var customer = server.createActor('customer');
         
         shop.on('message', function(message){
-            message.reply('Yum Yum')
+            message.reply({cakes: 10})
         })
         
         customer.on('ready', function(){
