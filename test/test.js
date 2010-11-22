@@ -11,11 +11,14 @@
     shop = server.createActor('shop');
     customer = server.createActor('customer');
     shop.on('message', function(message) {
-      switch (message.message) {
-        case 'cakes':
+      console.log(JSON.stringify(message.message));
+      switch (JSON.stringify(message.message)) {
+        case '"cakes"':
           return message.reply(10);
-        case 'order':
+        case '"order"':
           return message.reply(1);
+        case '[1,2,3]':
+          return message.reply([4, 5, 6]);
       }
     });
     return shop.on('ready', function() {
@@ -23,8 +26,11 @@
         assert.equal(reply, 10, 'Got ' + reply + ' cakes, expected 10');
         return customer.send('shop', 'order', function(reply) {
           assert.equal(reply, 1, 'Got ' + reply + ' cakes, expected 1');
-          sys.puts('Tests passed');
-          return process.exit(0);
+          return customer.send('shop', [1, 2, 3], function(reply) {
+            assert.equal(JSON.stringify(reply), '[4,5,6]', 'Got ' + JSON.stringify(reply) + ', expected [4,5,6]');
+            console.log('Tests passed');
+            return process.exit(0);
+          });
         });
       });
     });
