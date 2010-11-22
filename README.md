@@ -14,7 +14,9 @@ same process.
         var customer = server.createActor('customer');
         
         shop.on('message', function(message){
-            message.reply({cakes: 10})
+            if(message.reply){
+                message.reply({cakes: 10})
+            }
         })
         
         customer.on('ready', function(){
