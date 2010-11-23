@@ -104,6 +104,7 @@ class Actor extends events.EventEmitter
                     replyQueue.subscribe (message) =>
                         @receiveReply message, callback
                         replyQueue.destroy()
+                        delete @connection.queues[replyQueueId]
                     @messages.publish('actor.'+id.toString(), bison.encode({ from: replyQueueId, message: message}))
         else
             @messages.publish('actor.'+id.toString(), bison.encode({ message: message}))
