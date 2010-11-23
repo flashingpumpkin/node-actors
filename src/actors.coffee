@@ -109,6 +109,11 @@ class Actor extends events.EventEmitter
         else
             @messages.publish('actor.'+id.toString(), bison.encode({ message: message}))
 
+
+    destroy: ->
+        @queue.destroy()
+        delete @connection.queues[@id]
+
 # The only export wraps `amqp.createConnection` and creates a new actor connection that
 # receives the AMQP connection to work with. Then the actor object is returned.
 exports.createConnection = (options)->
