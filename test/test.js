@@ -1,6 +1,6 @@
 (function() {
   var actors, assert, server, sys;
-  sys = require('sys');
+  util = require('util');
   actors = require('../lib/actors');
   assert = require('assert');
   server = actors.createConnection({
