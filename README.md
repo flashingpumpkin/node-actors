@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/flashingpumpkin/node-actors.png)](http://travis-ci.org/flashingpumpkin/node-actors)
 # Actors
 
 Lots has been said about actors and message passing. I've been wondering
